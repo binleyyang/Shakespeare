@@ -66,7 +66,7 @@ public class Main {
 				table.add(new Word(scan.next(), list));
 			}
 		}
-		System.out.println("There are " + table.size() + " many different words in the " + str + " file.");
+		System.out.println("There are " + table.size() + " many different words and " + table.total() + " total words in the " + str + " file.");
 		return table;
 	}
 	
@@ -75,9 +75,9 @@ public class Main {
 		double ratio = (one.size()/one.total())/(two.size()/two.total());
 
 		if (ratio > 1.0)
-			System.out.println("The hypothesis is correct as ratio of (SD/SS)/(ED/ES) is " + ratio + " > 1");
+			System.out.println("\nThe hypothesis is correct as ratio of (SD/SS)/(ED/ES) is " + ratio + " > 1");
 		else 
-			System.out.println("The hypothesis is incorrect as ratio of (SD/SS)/(ED/ES) is " + ratio + " < 1");
+			System.out.println("\nThe hypothesis is incorrect as ratio of (SD/SS)/(ED/ES) is " + ratio + " < 1");
 	}
 	
 	@SuppressWarnings("resource")
@@ -91,7 +91,7 @@ public class Main {
 		Iterator<E> dupItr = newList.iterator();
 		while(dupItr.hasNext()) {
 			E word = dupItr.next();
-			if (noDuplicate.contains(word) || (((String) word).matches("[ivxlcdm]+")))
+			if (noDuplicate.contains(word) || (((String) word).matches("[ivxlcdm]+"))) //removes the roman numerals
 				dupItr.remove();
 			else
 				noDuplicate.add(word);

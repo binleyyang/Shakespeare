@@ -146,8 +146,9 @@ public class HashTable implements Set<Word> {
 		    		s = scan.nextLine();
 		    	}
 		    	
-		    	System.out.println(array[findPos(s)].element.getContent() + " occurs " + array[findPos(s)].element.getLines().getListSize() + " times, in lines: .");
+		    	System.out.print(array[findPos(s)].element.getContent() + " occurs " + array[findPos(s)].element.getLines().getListSize() + " times, in lines: ");
 		    	array[findPos(s)].element.getLines().printList();
+		    	System.out.println("Please enter another word to search for: ");
 	    	
 	    }
 	    
